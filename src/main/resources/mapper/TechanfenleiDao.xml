@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TechanfenleiDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.entity.TechanfenleiEntity" id="techanfenleiMap">
+        <result property="techanfenlei" column="techanfenlei"/>
+    </resultMap>
+
+	<select id="selectListVO"
+		resultType="com.entity.vo.TechanfenleiVO" >
+		SELECT * FROM techanfenlei  techanfenlei         
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectVO"
+		resultType="com.entity.vo.TechanfenleiVO" >
+		SELECT  techanfenlei.* FROM techanfenlei  techanfenlei 	
+ 		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+    <select id="selectListView"
+		resultType="com.entity.view.TechanfenleiView" >
+
+		SELECT  techanfenlei.* FROM techanfenlei  techanfenlei 	        
+        <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+	<select id="selectView"
+		resultType="com.entity.view.TechanfenleiView" >
+		SELECT * FROM techanfenlei  techanfenlei <where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+	
+</mapper>
